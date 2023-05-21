@@ -39,14 +39,15 @@
                     </div>
                 @endif
                 <form class="row" action="{{url('login')}}" method="post">
+                    @csrf
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
-                            <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input name="username" class="form-control form-control-lg bg-gray-800 border-dark" id="username" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+                            <input name="password" type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="password">
                         </div>
                         <button type="submit" class="btn btn-white btn-xl mb-4">Submit</button>
                     </div>
