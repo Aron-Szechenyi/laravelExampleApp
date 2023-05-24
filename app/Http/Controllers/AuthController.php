@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -15,7 +14,7 @@ class AuthController extends Controller
 
     public function Login(): RedirectResponse
     {
-        if(auth()->attempt(request()->only(['username','password'])))
+        if (auth()->attempt(request()->only(['username', 'password'])))
             return redirect('/company');
 
 
@@ -26,6 +25,6 @@ class AuthController extends Controller
                 'password' => 'required'
             ]
         )->validate();
-        return redirect()->back()->withErrors(['username'=>'Invalid Username or Password!']);
+        return redirect()->back()->withErrors(['username' => 'Invalid Username or Password!']);
     }
 }
