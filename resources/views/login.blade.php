@@ -38,7 +38,7 @@
                         </ul>
                     </div>
                 @endif
-                <form class="row" action="{{url('login')}}" method="post">
+                <form class="row" action="{{url('/')}}" method="post">
                     @csrf
                     <div class="col-12">
                         <div class="mb-3">

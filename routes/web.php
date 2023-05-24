@@ -15,7 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[AuthController::Class, 'index']);
-Route::post('/login',[AuthController::Class, 'login']);
+//login
+Route::get('/',[AuthController::Class, 'Index']);
+Route::post('/',[AuthController::Class, 'Login']);
 
-Route::get('/company',[CompanyController::class,'list']);
+//company crud
+//read
+Route::get('/company',[CompanyController::class,'Show']);
+Route::post('/company/list/{slug}',[CompanyController::class,'Details']);
+
+//create
+Route::post('/company/create',[CompanyController::class,'Create']);
+Route::get('/company/create',[CompanyController::class,'CreateForm']);
+
+//update
+Route::post('/company/update',[CompanyController::class,'Update']);
+
+//delete
+Route::post('/company/delete',[CompanyController::class,'Delete']);
+
