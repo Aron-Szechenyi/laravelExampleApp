@@ -16,8 +16,7 @@ class AuthController extends Controller
     {
         if (auth()->attempt(request()->only(['username', 'password'])))
             return redirect('/company');
-
-
+        
         validator(
             request()->all(),
             [
