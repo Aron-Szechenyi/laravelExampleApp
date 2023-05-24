@@ -12,7 +12,7 @@
     <meta name="generator" content="Eleventy v2.0.0">
     <meta name="HandheldFriendly" content="true">
     <title>Login</title>
-    <link rel="stylesheet" href="css/theme.min.css">
+    <link rel="stylesheet" href="../../css/theme.min.css">
 </head>
 <body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
 <div class="h-100 container-fluid">
@@ -28,11 +28,17 @@
                 </a>
             </header>
             <main class="mb-auto col-12">
-                <h1>Company</h1>
-
+                @include('companyList')
             </main>
         </div>
-        <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"></div>
+        <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient">
+            @isset($company)
+                @include('companyDetails')
+            @endisset
+            @isset($newCompany)
+                @include('companyCreate')
+            @endisset
+        </div>
     </div>
 </div>
 </body>
