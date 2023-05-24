@@ -5,12 +5,12 @@
 </div>
 <table class="table">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Tax number</th>
-            <th scope="col"></th>
-        </tr>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Tax number</th>
+        <th scope="col"></th>
+    </tr>
     </thead>
     <tbody>
     @foreach($companies as $company)
