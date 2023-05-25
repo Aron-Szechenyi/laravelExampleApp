@@ -1,16 +1,16 @@
 <div>
     <form action="{{url('company')}}/create" method="get">
-        <input type="submit" value="Create new">
+        <input class="btn-success" type="submit" value="Create new">
     </form>
 </div>
-<table class="table">
+<table class="table text-white table-borderless">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Tax number</th>
-            <th scope="col"></th>
-        </tr>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Tax number</th>
+        <th scope="col"></th>
+    </tr>
     </thead>
     <tbody>
     @foreach($companies as $company)
@@ -21,7 +21,7 @@
             <td>
                 <form action="{{url('company')}}/list/{{$company->id}}" method="post">
                     @csrf
-                    <input type="submit" value="Details">
+                    <input class="btn-secondary" type="submit" value="Details">
                 </form>
             </td>
         </tr>

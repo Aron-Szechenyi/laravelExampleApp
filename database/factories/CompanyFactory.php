@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Company>
+ * @extends Factory<Company>
  */
 class CompanyFactory extends Factory
 {
@@ -17,10 +18,10 @@ class CompanyFactory extends Factory
     public function definition(): array
     {
         return [
-            'companyName'=>$this->faker->company,
-            'taxNumber'=>$this->faker->postcode, //this looks tax number enough
-            'phoneNumber'=>$this->faker->phoneNumber,
-            'emailAddress'=>$this->faker->companyEmail,
+            'companyName' => $this->faker->company,
+            'taxNumber' => $this->faker->postcode, //this looks tax number enough
+            'phoneNumber' => $this->faker->phoneNumber,
+            'emailAddress' => $this->faker->companyEmail,
         ];
     }
 }
