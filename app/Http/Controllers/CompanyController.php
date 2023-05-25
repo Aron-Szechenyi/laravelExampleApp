@@ -31,6 +31,14 @@ class CompanyController extends Controller
 
     public function Update(): View
     {
+        request()->validate([
+            'companyName' => 'required',
+            'taxNumber' => 'required',
+            'phoneNumber' => 'required',
+            'emailAddress' => 'required',
+        ]);
+        
+
         $values = request()->all();
 
         $company = Company::find($values['Id']);

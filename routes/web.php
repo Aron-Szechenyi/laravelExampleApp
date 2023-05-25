@@ -23,6 +23,7 @@ Route::post('/', [AuthController::Class, 'Login']);
 //read
 Route::get('/company', [CompanyController::class, 'Show'])->middleware('auth');
 Route::post('/company/list/{slug}', [CompanyController::class, 'Details'])->middleware('auth');
+Route::get('/company/list/{slug}', [CompanyController::class, 'Details'])->middleware('auth');
 
 //create
 Route::post('/company/create', [CompanyController::class, 'Create'])->middleware('auth');

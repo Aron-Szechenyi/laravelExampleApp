@@ -1,4 +1,13 @@
 <div class="bg-black m-lg-5">
+    @if($errors->any())
+        <div class="bg-red-200 p-3">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container p-2 m-1">
         <table class="table table-borderless text-white">
             <form method="post" action="{{url('company/create')}}">
