@@ -12,7 +12,7 @@
     <meta name="generator" content="Eleventy v2.0.0">
     <meta name="HandheldFriendly" content="true">
     <title>Login</title>
-    <link rel="stylesheet" href="../../css/theme.min.css">
+    @vite('resources/css/theme.min.css')
 </head>
 <body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
 <div class="h-100 container-fluid">
