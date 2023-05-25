@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User
         User::create([
             'username' => 'admin',
             'email' => 'test1@test.com',
@@ -26,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test2@test.com',
             'password' => Hash::Make('root')
         ]);
-        //Company
+        
         Company::factory()->count(15)->create();
 
         $this->command->info("Username:admin \nPassword:admin");
