@@ -1,12 +1,11 @@
-<div class="bg-black" style="width: 100%; height: calc(100% - 2.5rem); margin-top: 2rem;">
-    <div class="container">
-        <h2>{{$company->companyName}}</h2>
-        <table class="table">
+<div class="bg-black m-lg-5">
+    <div class="container p-2 m-1">
+        <h2 class="text-center">{{$company->companyName}}</h2>
+        <table class="table text-white table-borderless">
             <form method="post" action="{{url('company/update')}}">
                 @csrf
                 <tbody>
                 <tr>
-
                     <th scope="col">Company name</th>
                     <td>
                         <input type="hidden" value="{{$company->id}}" name="Id">
@@ -41,14 +40,14 @@
 
                 <tr>
                     <td>
-                        <input type="submit" value="Update">
+                        <input class="btn-warning" type="submit" value="Update">
                     </td>
             </form>
             <td>
                 <form method="post" action="{{url('company/delete')}}">
                     @csrf
                     <input type="hidden" value="{{$company->id}}" name="Id">
-                    <input type="submit" value="delete">
+                    <input class="btn-danger" type="submit" value="delete">
                 </form>
             </td>
             </tr>

@@ -1,11 +1,10 @@
-<div class="bg-black" style="width: 100%; height: calc(100% - 2.5rem); margin-top: 2rem;">
-    <div class="container">
-        <table class="table">
+<div class="bg-black m-lg-5">
+    <div class="container p-2 m-1">
+        <table class="table table-borderless text-white">
             <form method="post" action="{{url('company/create')}}">
                 @csrf
                 <tbody>
                 <tr>
-
                     <th scope="col">Company name</th>
                     <td>
                         <input type="text" class="form-control" size="30" name="companyName">
@@ -35,7 +34,7 @@
 
                 <tr>
                     <td>
-                        <input type="submit" value="Create">
+                        <input class="btn-success" type="submit" value="Create">
                     </td>
             </form>
             </tr>
