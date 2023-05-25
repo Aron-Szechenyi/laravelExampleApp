@@ -8,24 +8,24 @@
 
                     <th scope="col">Company name</th>
                     <td>
-                        <input type="text" class="form-control" size="30" name="companyName"">
+                        <input type="text" class="form-control" size="30" name="companyName">
                     </td>
                 </tr>
 
                 <tr>
                     <th scope="col">Tax number</th>
                     <td>
-                        <input type="text" class="form-control" size="30" name="taxNumber"">
+                        <input type="text" class="form-control" size="30" name="taxNumber">
                     </td>
                 </tr>
 
                 <tr>
                     <th scope="col">Phone number</th>
                     <td>
-                        <input type="text" class="form-control" size="30" name="phoneNumber"">
+                        <input type="text" class="form-control" size="30" name="phoneNumber">
                     </td>
                 </tr>
-                
+
                 <tr>
                     <th scope="col">Email</th>
                     <td>
