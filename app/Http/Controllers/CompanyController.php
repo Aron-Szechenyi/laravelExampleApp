@@ -19,7 +19,7 @@ class CompanyController extends Controller
     public function Details(Company $company): View
     {
         return View('company.company', ['companies' => Company::All(),
-            'company' => $company]);
+            'companyDetails' => $company]);
     }
 
     public function Delete(): View
@@ -43,7 +43,7 @@ class CompanyController extends Controller
             'phoneNumber' => ['required', 'max:30'],
             'emailAddress' => ['required', 'max:35'],
         ])->validated();
-        
+
         $company = Company::find(Request()->input('Id'));
         $company->companyName = $values['companyName'];
         $company->taxNumber = $values['taxNumber'];
