@@ -19,7 +19,7 @@
             <td>{{$company->companyName}}</td>
             <td>{{$company->taxNumber}}</td>
             <td>
-                <form action="{{route('companyList',['slug'=>$company->id])}}" method="post">
+                <form action="{{route('companyList',['company'=>$company->id])}}" method="post">
                     @csrf
                     <input class="btn-secondary" type="submit" value="Details">
                 </form>

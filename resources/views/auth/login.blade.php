@@ -31,16 +31,14 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
 
-                    <!-- Email Address -->
                     <div>
                         <x-input-label for="username" :value="__('username')"/>
-                        <x-text-input id="username" class="block mt-1 w-full" type="username" name="username"
+                        <x-text-input id="username" class="block mt-1 w-full" type="text" name="username"
                                       :value="old('username')" required
                                       autofocus autocomplete="username"/>
                         <x-input-error :messages="$errors->get('username')" class="mt-2"/>
                     </div>
 
-                    <!-- Password -->
                     <div class="mt-4">
                         <x-input-label for="password" :value="__('Password')"/>
 
@@ -52,7 +50,6 @@
                         <x-input-error :messages="$errors->get('password')" class="mt-2"/>
                     </div>
 
-                    <!-- Remember Me -->
                     <div class="block mt-4">
                         <label for="remember_me" class="inline-flex items-center">
                             <input id="remember_me" type="checkbox"

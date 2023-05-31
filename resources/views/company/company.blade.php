@@ -8,7 +8,7 @@
     <meta name="generator" content="Eleventy v2.0.0">
     <meta name="HandheldFriendly" content="true">
     <title>Company crud</title>
-    @vite(['resources/css/theme.min.css','resources/css/bootstrap.css'])
+    @vite(['resources/css/theme.min.css','resources/css/bootstrap.css', 'resources/js/app.js'])
 </head>
 <body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
 <div class="h-100 container-fluid">
