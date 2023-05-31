@@ -17,28 +17,28 @@
                     <th scope="col">Company name</th>
                     <td>
                         <input type="hidden" value="{{$company->id}}" name="Id">
-                        <input type="text" class="form-control" size="30" name="companyName"
+                        <input type="text" maxlength="35" class="form-control" size="30" name="companyName"
                                value="{{$company->companyName}}">
                     </td>
                 </tr>
                 <tr>
                     <th scope="col">Tax number</th>
                     <td>
-                        <input type="text" class="form-control" size="30" name="taxNumber"
+                        <input type="text" maxlength="25" class="form-control" size="30" name="taxNumber"
                                value="{{$company->taxNumber}}">
                     </td>
                 </tr>
                 <tr>
                     <th scope="col">Phone number</th>
                     <td>
-                        <input type="tel" class="form-control" size="30" name="phoneNumber"
+                        <input type="tel" maxlength="30" class="form-control" size="30" name="phoneNumber"
                                value="{{$company->phoneNumber}}">
                     </td>
                 </tr>
                 <tr>
                     <th scope="col">Email</th>
                     <td>
-                        <input type="email" class="form-control" size="30" name="emailAddress"
+                        <input type="email" maxlength="35" class="form-control" size="30" name="emailAddress"
                                value="{{$company->emailAddress}}">
                     </td>
                 </tr>

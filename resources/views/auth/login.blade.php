@@ -33,7 +33,7 @@
 
                     <div>
                         <x-input-label for="username" :value="__('username')"/>
-                        <x-text-input id="username" class="block mt-1 w-full" type="text" name="username"
+                        <x-text-input id="username" maxlenght="25" class="block mt-1 w-full" type="text" name="username"
                                       :value="old('username')" required
                                       autofocus autocomplete="username"/>
                         <x-input-error :messages="$errors->get('username')" class="mt-2"/>
