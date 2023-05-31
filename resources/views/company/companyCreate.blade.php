@@ -10,7 +10,7 @@
     @endif
     <div class="container p-2 m-1">
         <table class="table table-borderless text-white">
-            <form method="post" action="{{url('company/create')}}">
+            <form method="post" action="{{route('companyCreate')}}">
                 @csrf
                 <tbody>
                 <tr>

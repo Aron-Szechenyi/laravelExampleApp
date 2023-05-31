@@ -11,7 +11,7 @@
     <div class="container p-2 m-1">
         <h2 class="text-center">{{$company->companyName}}</h2>
         <table class="table text-white table-borderless">
-            <form method="post" action="{{url('company/update')}}">
+            <form method="post" action="{{route('companyUpdate')}}">
                 @csrf
                 <tbody>
                 <tr>
@@ -53,7 +53,7 @@
                     </td>
             </form>
             <td>
-                <form method="post" action="{{url('company/delete')}}">
+                <form method="post" action="{{route('companyDelete')}}">
                     @csrf
                     <input type="hidden" value="{{$company->id}}" name="Id">
                     <input class="btn-danger" type="submit" value="delete">

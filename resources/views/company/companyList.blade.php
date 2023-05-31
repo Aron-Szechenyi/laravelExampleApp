@@ -1,5 +1,5 @@
 <div>
-    <form action="{{url('company')}}/create" method="get">
+    <form action="{{route('companyGetForm')}}" method="get">
         <input class="btn-success" type="submit" value="Create new">
     </form>
 </div>
@@ -19,7 +19,7 @@
             <td>{{$company->companyName}}</td>
             <td>{{$company->taxNumber}}</td>
             <td>
-                <form action="{{url('company')}}/list/{{$company->id}}" method="post">
+                <form action="{{route('companyList',['slug'=>$company->id])}}" method="post">
                     @csrf
                     <input class="btn-secondary" type="submit" value="Details">
                 </form>
