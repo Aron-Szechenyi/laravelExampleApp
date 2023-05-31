@@ -12,11 +12,9 @@ class CompanyController extends Controller
         return View('company.company', ['companies' => Company::All()]);
     }
 
-    public function Details($id): View
+    public function Details(Company $company): View
     {
-        $companies = Company::All();
-        $company = $companies->where('id', $id)->firstOrFail();
-        return View('company.company', ['companies' => $companies,
+        return View('company.company', ['companies' => Company::All(),
             'company' => $company]);
     }
 

@@ -7,8 +7,8 @@ Route::middleware('auth')->group(function () {
 
 //read
     Route::get('company', [CompanyController::class, 'Show']);
-    Route::post('/company/list/{slug}', [CompanyController::class, 'Details']);
-    Route::get('/company/list/{slug}', [CompanyController::class, 'Details'])->name('companyList');
+    Route::post('/company/list/{company}', [CompanyController::class, 'Details']);
+    Route::get('/company/list/{company}', [CompanyController::class, 'Details'])->name('companyList');
 
 //create
     Route::post('/company/create', [CompanyController::class, 'Create'])->name('companyCreate');
