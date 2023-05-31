@@ -45,8 +45,7 @@
                 </tbody>
             </table>
 
-            <input class="btn-warning" type="submit" value="Update"
-                   onclick="return confirm('are you sure about this edit?')"/>
+            <input class="btn-warning" type="submit" value="Update"/>
             @csrf
         </form>
         <form method="post" action="{{route('companyDelete')}}">

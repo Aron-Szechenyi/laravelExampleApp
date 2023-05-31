@@ -43,8 +43,7 @@
 
                 <tr>
                     <td>
-                        <input class="btn-success" type="submit" onclick="confirm('are you sure about this create?')"
-                               value="Create">
+                        <input class="btn-success" type="submit" value="Create">
                     </td>
             </form>
             </tr>
