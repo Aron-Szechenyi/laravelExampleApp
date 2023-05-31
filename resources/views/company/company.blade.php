@@ -4,11 +4,15 @@
 @endsection
 
 
+
 @section('header')
     <x-logout-form/>
 @endsection
 
 @section('content_left')
+    @isset($feedback)
+        <h5 class="text-center text-success">{{$feedback}}</h5>
+    @endisset
     <div>
         <form action="{{route('companyGetForm')}}" method="get">
             <input class="btn-success" type="submit" value="Create new">
@@ -47,7 +51,7 @@
         @isset($companyDetails)
             <div class="bg-black m-lg-5 p-4">
                 @if($errors->any())
-                    <div class="">
+                    <div class="text-danger text-start">
                         @foreach($errors->all() as $error)
                             <li>{{$error}}</li>
                         @endforeach
@@ -56,14 +60,14 @@
                             @csrf
                             <table class="table table-borderless text-white">
                                 <tbody>
-                                <x-table-row name="companyName"
-                                             th="Company name">{{$companyDetails->companyName}}</x-table-row>
-                                <x-table-row name="taxNumber"
-                                             th="Tax number">{{$companyDetails->taxNumber}}</x-table-row>
-                                <x-table-row name="phoneNumber"
-                                             th="Phone number">{{$companyDetails->phoneNumber}}</x-table-row>
-                                <x-table-row name="emailAddress"
-                                             th="Email address">{{$companyDetails->emailAddress}}</x-table-row>
+                                <x-table-row name="companyName" type="text" max="30"
+                                             th="Company name">{{old('companyName',$companyDetails->companyName)}}</x-table-row>
+                                <x-table-row name="taxNumber" type="text" max="25"
+                                             th="Tax number">{{old('companyName',$companyDetails->taxNumber)}}</x-table-row>
+                                <x-table-row name="phoneNumber" type="tel" max="20"
+                                             th="Phone number">{{old('phoneNumber',$companyDetails->phoneNumber)}}</x-table-row>
+                                <x-table-row name="emailAddress" type="email" max="30"
+                                             th="Email address">{{old('emailAddress',$companyDetails->emailAddress)}}</x-table-row>
                                 </tbody>
                             </table>
                             <input type="hidden" value="{{$companyDetails->id}}" name="Id">
@@ -76,14 +80,12 @@
                                    onclick="return confirm('are you really want to delete this?')">
                         </form>
                     </div>
-
-
             </div>
         @endisset
         @isset($newCompany)
             <div class="bg-black m-lg-5 p-4">
                 @if($errors->any())
-                    <div class="text-center">
+                    <div class="text-danger text-start">
                         @foreach($errors->all() as $error)
                             <li>{{$error}}</li>
                         @endforeach
@@ -93,10 +95,14 @@
                     @csrf
                     <table class="table table-borderless text-white">
                         <tbody>
-                        <x-table-row name="companyName" th="Company name"/>
-                        <x-table-row name="taxNumber" th="Tax number"/>
-                        <x-table-row name="phoneNumber" th="Phone number"/>
-                        <x-table-row name="emailAddress" th="Email address"/>
+                        <x-table-row name="companyName" type="text" max="30"
+                                     th="Company name">{{old('companyName')}}</x-table-row>
+                        <x-table-row name="taxNumber" type="text" max="25"
+                                     th="Tax number">{{old('taxNumber')}}</x-table-row>
+                        <x-table-row name="phoneNumber" type="tel" max="20"
+                                     th="Phone number">{{old('phoneNumber')}}</x-table-row>
+                        <x-table-row name="emailAddress" type="email" max="30"
+                                     th="Email address">{{old('emailAddress')}}</x-table-row>
                         <td>
                             <input class="btn-success" type="submit" value="Create">
                         </td>

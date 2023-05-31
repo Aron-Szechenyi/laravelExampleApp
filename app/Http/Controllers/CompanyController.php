@@ -28,7 +28,8 @@ class CompanyController extends Controller
         $company = Company::all()->where('id', $values['Id'])->firstOrFail();
         $company->delete();
 
-        return view('company.company', ['companies' => Company::all()]);
+        return view('company.company', ['companies' => Company::all()])
+            ->with('feedback', "{$company->companyName} is successfully deleted!");
     }
 
     /**
@@ -52,7 +53,7 @@ class CompanyController extends Controller
         $company->save();
 
         return view('company.company', ['companies' => Company::all(),
-            'company' => $company]);
+            'company' => $company])->with('feedback', "{$company->companyName} is successfully updated!");
     }
 
     public function CreateForm(): View
@@ -82,6 +83,7 @@ class CompanyController extends Controller
         $company->emailAddress = $values['emailAddress'];
         $company->save();
 
-        return view('company.company', ['companies' => Company::all()]);
+        return view('company.company', ['companies' => Company::all()])
+            ->with('feedback', "{$company->companyName} is successfully created!");
     }
 }
