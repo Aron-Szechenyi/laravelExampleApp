@@ -9,14 +9,14 @@ class CompanyController extends Controller
 {
     public function Show(): View
     {
-        return View('company', ['companies' => Company::All()]);
+        return View('company.company', ['companies' => Company::All()]);
     }
 
     public function Details($id): View
     {
         $companies = Company::All();
         $company = $companies->where('id', $id)->firstOrFail();
-        return View('company', ['companies' => $companies,
+        return View('company.company', ['companies' => $companies,
             'company' => $company]);
     }
 
@@ -26,7 +26,7 @@ class CompanyController extends Controller
         $company = Company::all()->where('id', $values['Id'])->firstOrFail();
         $company->delete();
 
-        return view('company', ['companies' => Company::all()]);
+        return view('company.company', ['companies' => Company::all()]);
     }
 
     public function Update(): View
@@ -37,7 +37,7 @@ class CompanyController extends Controller
             'phoneNumber' => 'required',
             'emailAddress' => 'required',
         ]);
-        
+
 
         $values = request()->all();
 
@@ -48,13 +48,13 @@ class CompanyController extends Controller
         $company->emailAddress = $values['emailAddress'];
         $company->save();
 
-        return view('company', ['companies' => Company::all(),
+        return view('company.company', ['companies' => Company::all(),
             'company' => $company]);
     }
 
     public function CreateForm(): View
     {
-        return view('company', ['companies' => Company::all(),
+        return view('company.company', ['companies' => Company::all(),
             'newCompany' => true]);
     }
 
@@ -76,6 +76,6 @@ class CompanyController extends Controller
         $company->emailAddress = $values['emailAddress'];
         $company->save();
 
-        return view('company', ['companies' => Company::all()]);
+        return view('company.company', ['companies' => Company::all()]);
     }
 }

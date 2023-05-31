@@ -27,15 +27,15 @@
                 </a>
             </header>
             <main class="mb-auto col-12">
-                @include('companyList')
+                @include('company.companyList')
             </main>
         </div>
         <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient">
             @isset($company)
-                @include('companyDetails')
+                @include('company.companyDetails')
             @endisset
             @isset($newCompany)
-                @include('companyCreate')
+                @include('company.companyCreate')
             @endisset
         </div>
     </div>
